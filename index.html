@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario BroadSonick</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <script defer src="./assets/js/main.js"></script>
+</head>
+<body class="bg-white">
+    <section class="container-fluid">
+        <div class="row min-vh-100"> 
+            <!-- Panel izquierdo -->
+            <div class="col-12 col-md-8 p-4">
+                <h1 class="text-primary fw-bold mb-4">Sistema de inventario BroadSonick</h1>
+                <div class="card border shadow-sm rounded-3 overflow-hidden container-tabla"> 
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-light">
+                                <tr class="text-secondary small text-center">
+                                    <th class="h6 p-3 fw-semibold border-bottom">Producto</th>
+                                    <th class="h6 p-3 fw-semibold border-bottom">Categoría</th>
+                                    <th class="h6 p-3 fw-semibold border-bottom">Precio Neto</th>
+                                    <th class="h6 p-3 fw-semibold border-bottom">Stock</th>
+                                    <th class="h6 p-3 fw-semibold border-bottom">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla-productos">
+                                <!-- Productos Agregados -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- SubTotal + IVA -->      
+                 <div class="p-3 border rounded-3 mb-2 bg-light mt-5 shadow-sm">
+                    <div class="d-flex justify-content-between">
+                        <span>Subtotal:</span>
+                        <span>$<span id="subtotal">0</span></span>
+                    </div>
+
+                 <div class="d-flex justify-content-between">
+                        <span>IVA (19%):</span>
+                        <span>$<span id="iva">0</span></span>
+                    </div>
+                 </div>
+
+                 <!-- Total --> 
+                <div class="barra-total mt-3 p-4 bg-primary text-white rounded-3 shadow-sm d-flex justify-content-between align-items-center">
+                    <span class="h5 mb-0 fw-bold">Total a pagar:</span>
+                    <span class="h4 mb-0 fw-bold">$<span id="total">0</span></span>
+                </div>
+                
+            </div>
+
+            <!-- Panel derecho -->
+            <div class="col-12 col-md-4 p-4 border-start bg-light">
+                <div class="card border shadow-sm p-4 mb-4">
+                    <h2 class="h4 text-primary mb-4 fw-bold">Gestión de producto</h2>
+
+                    <div class="mb-3"> 
+                        <label class="form-label small fw-bold">Nombre del producto</label>
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            class="form-control" 
+                            required
+                            placeholder="Ingresa el nombre del producto"> 
+                    </div>
+
+                    <div class="mb-3"> 
+                        <label class="form-label small fw-bold">Categoría</label>
+                        <input 
+                            type="text" 
+                            id="categoria"     
+                            class="form-control"    
+                            required
+                            placeholder="Ingresa una categoría"> 
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-6"> 
+                            <label class="form-label small fw-bold">Precio Neto</label>
+                            <input 
+                                type="number" 
+                                id="precio" 
+                                class="form-control" 
+                                required
+                                placeholder="Precio Neto"> 
+                        </div>
+
+                        <div class="col-6"> 
+                            <label class="form-label small fw-bold">Stock</label>
+                            <input 
+                                type="number" 
+                                id="stock"
+                                class="form-control" 
+                                required
+                                placeholder="Stock disponible"> 
+                        </div>
+                    </div>
+                    <button type="submit" id="btnAgregar" class="btn btn-primary w-100 fw-bold py-2 shadow-sm">Agregar producto</button>
+                </div>
+
+                <div class="card border shadow-sm p-3">
+                     <label class="form-label small fw-bold">Buscar</label>
+                    <input type="text" id="busqueda" class="form-control mb-3" placeholder="🔍 Buscar por nombre o categoría">
+                </div>
+
+            </div>
+        
+        </div>
+    </section>
+</body>
+</html>
