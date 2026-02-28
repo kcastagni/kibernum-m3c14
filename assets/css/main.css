@@ -2,3 +2,23 @@
     min-height: 400px;
 }
 
+.btn-control-stock {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 6px;
+    background-color: transparent;
+}
+
+.btn-menos { border: 1px solid #dc3545; color: #dc3545; }
+.btn-mas { border: 1px solid #28a745; color: #28a745; }
+
+.stock-valor {
+    font-weight: bold;
+    min-width: 40px;
+    text-align: center;
+}
